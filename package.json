@@ -1,0 +1,44 @@
+{
+  "name": "hustler-crypto-bot",
+  "version": "1.0.0",
+  "description": "Advanced Crypto Futures Scalping Bot with Mobile App Control",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docker-compose up",
+    "dev:backend": "cd backend && uvicorn main:app --reload",
+    "dev:frontend": "cd frontend && npm start",
+    "build": "docker-compose -f docker-compose.prod.yml build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && pytest tests/",
+    "test:frontend": "cd frontend && npm test",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && flake8 app/ && black --check app/",
+    "lint:frontend": "cd frontend && npm run lint",
+    "deploy": "docker-compose -f docker-compose.prod.yml up -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/hustler-crypto-bot.git"
+  },
+  "keywords": [
+    "crypto",
+    "trading",
+    "bot",
+    "scalping",
+    "futures",
+    "bitget",
+    "flutter",
+    "react",
+    "python"
+  ],
+  "author": "Hustler Bot Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/username/hustler-crypto-bot/issues"
+  },
+  "homepage": "https://github.com/username/hustler-crypto-bot#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.11.0"
+  }
+}
